@@ -1,0 +1,56 @@
+p = html.P("這是一段文字")
+document <= p
+//建立一個段落 <p>
+
+my_div = html.DIV("內容文字", Id="my_div", Class="box highlight")
+document <= my_div
+//建立有 id 和 class 的 <div>
+
+btn = html.BUTTON("點我一下", Id="click_btn")
+document <= btn
+//建立按鈕 <button>
+
+input_box = html.INPUT(type="text", Id="name_input", placeholder="請輸入名字")
+document <= input_box
+//建立輸入框 <input>
+
+img = html.IMG(src="robot.png", width=100)
+document <= img
+//建立圖片 <img>
+
+ul = html.UL()
+ul <= html.LI("第一項")
+ul <= html.LI("第二項")
+document <= ul
+//建立清單 <ul> 和 <li>
+
+msg = html.DIV()
+msg.text = "開始遊戲！"
+document <= msg
+//設定/修改元素的內容
+
+card = html.DIV(Class="card")
+card <= html.H3("標題")
+card <= html.P("這是說明文字")
+document <= card
+//動態加上子元素（巢狀元素）
+
+box = html.DIV("紅色方塊")
+box.style = {
+    "width": "100px",
+    "height": "100px",
+    "backgroundColor": "red"
+}
+document <= box
+//設定 CSS 樣式
+
+def say_hi(event):
+    alert_box.text = "你好！"
+
+btn = html.BUTTON("打招呼")
+btn.bind("click", say_hi)
+
+alert_box = html.DIV()
+document <= btn
+document <= alert_box
+//結合事件與 html 元素
