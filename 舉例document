@@ -1,0 +1,39 @@
+title = document["my_title"]
+title.text = "Hello, World!"
+//取得 HTML 元素（依 id）
+
+from browser import html
+new_div = html.DIV("我是新增的區塊", Id="my_div")
+document <= new_div  # 插入到整個 body
+//建立新元素並插入
+
+container = document["brython_div1"]
+container <= html.P("這是一段文字")
+//插入元素到特定位置
+
+def say_hi(event):
+    print("你按到了按鈕！")
+document["my_button"].bind("click", say_hi)
+//綁定事件（例如點擊）
+
+@bind(document, "keydown")
+def on_key(event):
+    print("你按下了：", event.key)
+//監聽鍵盤事件（全頁）
+
+del document["my_div"]
+//移除元素
+
+document["my_img"].attrs["src"] = "new_image.png"
+//修改 HTML 屬性
+
+document["my_div"].style["color"] = "red"
+document["my_div"].style["fontSize"] = "20px"
+//修改 CSS 樣式
+
+document["brython_div1"].clear()
+//清空某個容器的內容
+
+if "my_input" in document:
+    print("輸入框存在！")
+//檢查某個元素是否存在
